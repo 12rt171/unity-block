@@ -17,12 +17,13 @@ public class setstage1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //コンポーネントの読み込み
+        //残機を書き込むための準備
         stage1 = GameObject.Find("Text").GetComponent<sinkou>();
         //残機設定
         zanki = 3;
         stage1.zanki = zanki;
         //ブロックの配置
+        //通常タイプ
         for (int x = 12; x >= -12; x -= 4)
         {
             for (int z = 6; z >= 0; z -= 4)
@@ -41,7 +42,9 @@ public class setstage1 : MonoBehaviour {
                 obj.transform.parent = transform;
             }
         }
+        //ゲームオーバー時のリトライ用にこのシーンを設定
         GameObject.Find("gameover").GetComponent<gameover>().retry = "scene1";
+        //ゲームクリア時のリトライ用にこのシーンを設定
         GameObject.Find("gameclear").GetComponent<gameclear>().retry = "scene1";
 	}
 	

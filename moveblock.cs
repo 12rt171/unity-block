@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections;
 
 public class moveblock : MonoBehaviour {
-    GameObject sphere;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -47,16 +47,4 @@ public class moveblock : MonoBehaviour {
         sphere = GameObject.Find("Sphere(Clone)");
       
 	}
-    void OnCollisionEnter(Collision other)
-    {
-        //相手が撃ってくるたまに当たったら消滅
-        if (other.gameObject.CompareTag("shot"))
-        {
-            if (sphere != null)
-            {
-                Destroy(sphere);
-                GameObject.Find("Text").GetComponent<sinkou>().zanki -= 1;
-            }
-        }
-    }
 }

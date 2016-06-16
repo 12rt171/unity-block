@@ -18,12 +18,13 @@ public class setstage4 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        //残機を書き込むための準備
         stage4 = GameObject.Find("Text").GetComponent<sinkou>();
         //残機設定
         zanki = 10;
         stage4.zanki = zanki;
         //ブロックの配置
+        //弾幕タイプ
         for (int x = 12;  x>= -12; x -= 6)
         {
             position = new Vector3(x, position.y, 7);
@@ -31,6 +32,7 @@ public class setstage4 : MonoBehaviour {
             obj.transform.parent = transform;
             obj.GetComponent<shootblock>().seed = x * 10;
         }
+        //通常タイプ
         for (int x = 13; x >= -13; x -= 2)
         {
             for (int z = 3; z >= 0; z -= 2)
@@ -49,7 +51,9 @@ public class setstage4 : MonoBehaviour {
                 obj.transform.parent = transform;
             }
         }
+        //ゲームオーバー時のリトライ用にこのシーンを設定
         GameObject.Find("gameover").GetComponent<gameover>().retry = "scene4";
+        //ゲームクリア時のリトライ用にこのシーンを設定
         GameObject.Find("gameclear").GetComponent<gameclear>().retry = "scene4";
 	}
 	

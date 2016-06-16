@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿//弾幕を撃ってくるブロックの挙動
+
+using UnityEngine;
 using System.Collections;
 using System;
 
 public class shootblock : MonoBehaviour {
     //フレーム調査用
     int frame;
-    //一秒に一回までしか撃てないように制限
+    //3秒に1回までしか撃てないように制限
     bool flag;
     //乱数のシード用
     public int seed;
@@ -29,16 +31,21 @@ public class shootblock : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //乱数を生成
         n = UnityEngine.Random.value;
+        //乱数が規定値以上なら弾幕を生成。規定値を大きくするほど弾幕を張る可能性が低くなる。
         if (n > 0.98)
         {
+            //3秒に1回までに制限するため
             if (flag == false)
             {
-            Instantiate(shot, position, Quaternion.identity);
-            flag = true;
+               Instantiate(shot, position, Quaternion.identity);
+               flag = true;
             }
         }
+        //フレーム回し
         frame++;
+        //3秒に1回リセット
         if (frame == 180)
         {
             flag = false;
