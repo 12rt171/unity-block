@@ -44,7 +44,6 @@ public class moveblock : MonoBehaviour {
             }
             this.GetComponent<Rigidbody>().velocity = new Vector3((int)this.GetComponent<Rigidbody>().velocity.x, 0, 0);
         }
-        sphere = GameObject.Find("Sphere(Clone)");
       
 	}
 }
