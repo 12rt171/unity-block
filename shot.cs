@@ -29,7 +29,7 @@ public class shot : MonoBehaviour {
             if (sphere != null)
             {
                 Destroy(sphere);
-                GameObject.Find("Text").GetComponent<sinkou>().zanki -= 1;
+                GameObject.Find("sinkou(Clone)").GetComponent<sinkou>().zanki -= 1;
             }
         }
         //下まで行ったら自身を消去

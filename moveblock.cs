@@ -43,7 +43,6 @@ public class moveblock : MonoBehaviour {
                 this.GetComponent<Rigidbody>().velocity += new Vector3(1, 0, 0);
             }
             this.GetComponent<Rigidbody>().velocity = new Vector3((int)this.GetComponent<Rigidbody>().velocity.x, 0, 0);
-        }
-      
+        }     
 	}
 }

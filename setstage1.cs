@@ -18,7 +18,7 @@ public class setstage1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //残機を書き込むための準備
-        stage1 = GameObject.Find("Text").GetComponent<sinkou>();
+        stage1 = GameObject.Find("sinkou(Clone)").GetComponent<sinkou>();
         //残機設定
         zanki = 3;
         stage1.zanki = zanki;

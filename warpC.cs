@@ -21,7 +21,7 @@ public class warpC : MonoBehaviour {
             {
 
                 GameObject.Find("warp CC").GetComponent<warpCC>().flag = true;
-                other.GetComponent<Transform>().position = new Vector3(-8, 0, 4);
+                other.GetComponent<Transform>().position = new Vector3(8, 0, 4);
             }
         }
     }

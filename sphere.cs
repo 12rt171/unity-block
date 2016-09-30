@@ -76,7 +76,7 @@ public class sphere : MonoBehaviour {
         if (other.gameObject.CompareTag("wall"))
         {
             Destroy(this.gameObject);
-            GameObject.Find("Text").GetComponent<sinkou>().zanki -= 1;
+            GameObject.Find("sinkou(Clone)").GetComponent<sinkou>().zanki -= 1;
         }
     }
 }

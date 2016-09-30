@@ -26,7 +26,8 @@ public class sinkou : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        //自機の情報取得
+        cube = GameObject.Find("Cube 5");
     }
 
     // Update is called once per frame
@@ -50,11 +51,12 @@ public class sinkou : MonoBehaviour
         }
         //残機が0でミスしたらゲームオーバー
         else if(zanki < 0) {
-            gameoverflag.GetComponent<gameover>().flag = true;
+            GameObject.Find("gameover").GetComponent<gameover>().flag = true;
         }
+        //ブロックが全部消えたらクリア
         if (count == 0) 
         {
-            gameclearflag.GetComponent<gameclear>().flag = true;
+            GameObject.Find("gameclear").GetComponent<gameclear>().flag = true;
         }
     }
     void OnGUI () {

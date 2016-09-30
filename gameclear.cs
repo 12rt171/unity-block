@@ -27,7 +27,7 @@ public class gameclear : MonoBehaviour {
         //ゲームクリアフラグが立っている時リトライボタンとタイトルボタンの表示
         if (flag == true)
         {
-            //残ってる玉を消去
+            //画面に残ってる玉を消去
             sphere = GameObject.Find("Sphere(Clone)");
             if (sphere != null)
             {
